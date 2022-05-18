@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Garden.destroy_all
+
+Garden.create!(
+  name: "Retiro",
+  banner_url: "https://cdn2.civitatis.com/espana/madrid/guia/el-retiro.jpg"
+)
