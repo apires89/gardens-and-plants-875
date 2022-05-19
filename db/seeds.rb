@@ -7,8 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Garden.destroy_all
+Tag.destroy_all
 
-Garden.create!(
+names = %w(fruit tree cactus plant flower fern)
+
+garden = Garden.create!(
   name: "Retiro",
   banner_url: "https://cdn2.civitatis.com/espana/madrid/guia/el-retiro.jpg"
 )
+
+Plant.create(name: "Cactus",
+image_url: "https://losviajesdeali.com/wp-content/uploads/2021/03/Jardin-de-Cactus-Lanzarote-15-1140x513.jpg",
+garden: garden)
+
+names.each do |name|
+  Tag.create!(name: name)
+end
